@@ -1,4 +1,5 @@
 import javafx.scene.control.Label;
+import javafx.scene.effect.Glow;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
@@ -10,27 +11,31 @@ public class Symbol
     private Color color = Color.rgb(0, 255, 70);
     private double x;
     private double y;
-    private int size = 40;
+    private int size = 25;
     private Label body;
     private int timeInterval = 0;
     private int ccv = 0; // Current Count Value
 
     public Symbol(double x, double y)
     {
+        Glow glow = new Glow();
+        glow.setLevel(0.9);
+
         this.x = x;
         this.y = y;
         setTimeInterval();
         //
         body = new Label(getRandomSymbol() + "");
         body.setTextFill(color);
-        body.setStyle(String.format("-fx-font-weight: bold; -fx-font-size: %dpx", size)); // css :(
+        body.setStyle(String.format("-fx-font-weight: bold; -fx-font-size: %dpx;", size)); // css :(
         body.setLayoutX(x);
         body.setLayoutY(y);
+        //body.setEffect(glow);
     }
 
     public void setSize(int size)
     {
-        body.setStyle(String.format("-fx-font-weight: bold; -fx-font-size: %dpx", size));
+        body.setStyle(String.format("-fx-font-weight: bold; -fx-font-size: %dpx;", size));
     }
 
     public void setColor(Color color)
@@ -62,7 +67,7 @@ public class Symbol
 
     private void setTimeInterval()
     {
-        this.timeInterval = 6 + (int) Math.round(Math.random() * 14);
+        this.timeInterval = 7 + (int) Math.round(Math.random() * 18);
         ccv = 0;
     }
 

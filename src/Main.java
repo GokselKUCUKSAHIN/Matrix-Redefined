@@ -31,9 +31,14 @@ public class Main extends Application
         //
 
         //Symbol symbol = new Symbol(width/2,height/2);
-        Stream stream = new Stream(width/2,150);
-        child.add(stream.getBody());
-
+        for (int i = 0; i < width / 25; i++)
+        {
+            new Stream(i * 25, -1000 + Math.round(Math.random() * 250));
+        }
+        for (Stream stream : Stream.streams)
+        {
+            child.add(stream.getBody());
+        }
         //
         root.setOnKeyPressed(e -> {
             switch (e.getCode())
@@ -61,7 +66,10 @@ public class Main extends Application
         update = new Timeline(new KeyFrame(Duration.millis(16), e -> {
             //60 fps
             //System.out.println("loop test");
-            stream.next();
+            for (Stream stream : Stream.streams)
+            {
+                stream.next();
+            }
 
         }));
         update.setCycleCount(Timeline.INDEFINITE);
