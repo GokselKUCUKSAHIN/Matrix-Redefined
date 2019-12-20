@@ -13,10 +13,10 @@ public class Stream
 
     public Stream(double x, double y)
     {
-        speed = 3 + Math.round(Math.random() * 7);
+        this.speed = 2 + Math.round(Math.random() * 4);
         this.body.setLayoutX(x);
         this.body.setLayoutY(y);
-        final int limit = 5 + (int) Math.round(Math.random() * 25);
+        final int limit = 15 + (int) Math.round(Math.random() * 35);
         for (int i = 0; i < limit; i++)
         {
             this.symbols.add(new Symbol(0, i * 25));
@@ -40,8 +40,8 @@ public class Stream
         if (body.getLayoutY() > Main.height + 50)
         {
             // passed away, reset it again
-            this.body.setLayoutY(-1000 + Math.round(Math.random() * 250));
-            this.speed = 3 + Math.round(Math.random() * 7);
+            this.body.setLayoutY(-2000 + Math.round(Math.random() * 1000));
+            this.speed = 2 + Math.round(Math.random() * 4);
         }
         //
         for (Symbol symbol : symbols)

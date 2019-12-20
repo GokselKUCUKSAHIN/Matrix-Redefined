@@ -33,7 +33,7 @@ public class Main extends Application
         //Symbol symbol = new Symbol(width/2,height/2);
         for (int i = 0; i < width / 25; i++)
         {
-            new Stream(i * 25, -1000 + Math.round(Math.random() * 250));
+            new Stream(i * 25, -2000 + Math.round(Math.random() * 1000));
         }
         for (Stream stream : Stream.streams)
         {
