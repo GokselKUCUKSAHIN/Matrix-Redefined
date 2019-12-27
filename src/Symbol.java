@@ -52,8 +52,8 @@ public class Symbol
                     0,
                     220 + (int) Math.round(Math.random() * 35),
                     40 + (int) Math.round(Math.random() * 35))
-            );
-            setTimeInterval();
+            ); // Pale Cool Green
+            setTimeInterval(); // set new Random Switch time 
         } else
         {
             ccv++;
